@@ -1,0 +1,14 @@
+---
+title: "About"
+about:
+  template: jolla
+  image: images/Mary_14_Final copy.jpg
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://github.com/maryaglipay
+    - icon: github
+      text: Github
+      href: https://github.com/
+---
+
