@@ -1,10 +1,8 @@
 ---
-title: "an interesting post"
+title: "Test Negative Studies: Let's Talk About It"
 date: "2022-11-28"
 categories: [R, Covid-19, study design]
 ---
-
-**Test Negative Studies: Let's Talk About It**
 
 If you've been keeping up with the Covid-19 vaccine literature, there may be a study design that sticks out to you: a test-negative study. Huh? What's that?
 
