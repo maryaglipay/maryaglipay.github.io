@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Mary Aglipay"
 about:
   template: jolla
   image: images/Mary_14_Final copy.jpg
