@@ -12,3 +12,5 @@ about:
       href: https://github.com/
 ---
 
+PhD Epidemiology Student, Dalla Lana School of Public Health,
+University of Toronto
