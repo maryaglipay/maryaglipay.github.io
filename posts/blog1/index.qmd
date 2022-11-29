@@ -1,7 +1,7 @@
 ---
 title: "Test Negative Studies: Let's Talk About It"
 date: "2022-11-28"
-categories: [R, Covid-19, study design]
+categories: [R, Covid-19, study design, test-negative]
 ---
 
 If you've been keeping up with the Covid-19 vaccine literature, there may be a study design that sticks out to you: a test-negative study. Huh? What's that?
@@ -12,7 +12,8 @@ Before we get into what a test negative study is, let's think about what these v
 
 **Ok, so how do we do this?** In an ideal world, we could conduct a prospective cohort study---recruit children, follow them up over time, surveil them daily to see who got infected with SARS-CoV-2 and when. Sounds simple right? The problem is that this is really, really resource intensive. You need to follow a lot of children to have precise estimates. You need to test these children every day, and even if you tested them weekly, this can mean thousands upon thousands of PCR tests. You might have hard time finding families/children who are willing to do this.
 
-Ok. So cohort studies are too expensive. What the next best thing? The next best thing might be a population-based case control study. Here we would have complete case ascertainment, and we would select a random sample of population controls. This study, in essence, could be viewed as nested within the cohort, with missing data (i.e. controls we did not select) as missing at random. This study would be much cheaper, as we wouldn't have to do hundreds of thousands of PCR tests. But population controls are challenging---the way that they are ascertained might be different from the way cases as ascertained. The population controls might be very different than the cases. In our scenario, cases are ascertained through testing centres or pharmacies or other places that do PCR tests. These people might have better access to healthcare than the general population. This means the cases and conrols will be non-exchangeable--there are confounding factors that will impact case ascertainment as well as vaccination status, meaning there will be bias.
+Ok. So cohort studies are too expensive. What the next best thing? The next best thing might be a population-based case control study. Here we would have complete case ascertainment, and we would select a random sample of population controls. This study, in essence, could be viewed as nested within the cohort, with missing data (i.e. controls we did not select) as missing at random. In other words, according to Sullivan, this would be a cohort study in which the statum of people who do not test are ignored.
+This study would be much cheaper, as we wouldn't have to do hundreds of thousands of PCR tests. But population controls are challenging---the way that they are ascertained might be different from the way cases as ascertained. The population controls might be very different than the cases. In our scenario, cases are ascertained through testing centres or pharmacies or other places that do PCR tests. These people might have better access to healthcare than the general population. This means the cases and conrols will be non-exchangeable--there are confounding factors that will impact case ascertainment as well as vaccination status, meaning there will be bias.
 
 OK. What about a case-control study with 'other' patient controls--i.e. people who can access the testing centres and pharmacies. Now we're onto something. These controls are more like our cases---there is some indirect matching going on here. This brings us to the test-negative study. **A test-negative study recruit participants who attend Covid assessment centres and test positive for Covid-19; controls are participants who undergo the same tests for the same reasons as the cases, but test negative.**
 

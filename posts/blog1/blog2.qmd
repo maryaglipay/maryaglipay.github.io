@@ -1,0 +1,32 @@
+---
+title: "Who are your controls in test-negative studies?"
+date: "2022-11-29"
+categories: [R, Covid-19, study design, test-negative]
+---
+
+One thing that comes up in test-negative studies is, who exactly are the controls? Repeat after me: your controls are participants in your study who tested negative. If you've been working with cohort data or RCT data a lot, this is not intuitive: we often think in terms of exposed and unexposed. Controls are not your unexposed; they are those who tested negative.
+
+The overall test effectiveness study will just compare those who test positive with those who test negative, full stop. \[Note: you'll still have to adjust for calendar date, because what might happen is that perhaps as the pandemic rolls on, as we change seasons, people are more likely to get vaccinated and also perhaps more likely to test positive. This biases the result toward the null\]
+
+We can do interval analysis too-e.g., what is the vaccine effectiveness, or impact of vaccines, on children who were vaccinated only 14-29 days prior to their index date (remember that the index date is the day that they take their test). Another way of phrasing it is, what is the vaccine effectiveness 14-29 days after vaccination?
+
+In interval analysis, who are the controls? Again, they are still children who tested negative in that interval. How to know if they are in the interval? For vaccinated test-negatives (controls), you'll have an 'interval date', which tells you how along ago vaccination happened. In our example, you'll select vaccinated controls who vaccinated 14-29 days before their index date. For unvaccinated control, this interval date doesn't really make any sense. From which date should we count the unvaccinated control (or case for that matter)?
+
+Remember our time zero is July 28, 2022 (when Ontario rolled out vaccines for children in this age group). We can calculate a 'time interval' for unvaccinated children between their index date and this date.
+
+Take for example, the stratified/interval analysis in children who tested 14-29 days ago. Let's make a 2x2 table below.
+
+|              | Test negative               | Test positive                |
+|--------------|-----------------------------|------------------------------|
+| Unvaccinated | Unvaccinated 14-29 days ago | Unvaccinated 14-29 days ago. |
+| Vaccinated   | Vaccinated 14-29 days ago   | Vaccinated 14-29 days ago    |
+
+We should be looking at everyone 14-29 days prior to their index date, or 14-29 days 'after vaccination'- but for the unvaccinated, 'after vaccination' doesn't make sense because they were never vaccinated. But we can look at the interval between the roll-out date and their index date. As long as it was greater than 14-29 days, they can be considered. An index date that happened 90 days after roll-out for the unvaccinated can be included in the comparison of 14-29 days, because unvaccinated at 90 days also means unvaccinated at 60 days, and unvaccinated at 30 days. That means we can include everyone who is unvaccinated at an index date greater than the interval we are interested in, in our analysis, whether they are test negative or test positive.
+
+Other notes:
+
+Let's talk about 'follow-up,' which is a bit of a tricky concept. Note that we can't really talk about 'incomplete' or 'complete' follow-up in this analysis because outcome ascertainment happens at one point in time: the time of the test (see last paragraph in this blog post). But there is kind of a follow-up time for the vaccinated group, the time from vaccination to the index date; in the unvaccinated group, the 'follow-up' time is a bit arbitrary---it's counted from time zero, date of vaccine rollout in Ontario. But remember, a person who is unvaccinated at their index date, which happens, for example, 90 days after time zero, is also unvaccinated at time 60, time 30.
+
+What about someone who with multiple tests--they tested negative at 1, then tested positive at another, and they changed their vaccine status during that time? Remember that our 'anchor' is the index date, the date that someone tested. For our analysis, among cases, we will take the first positive event. For controls (test negative), we will randomly sample the index date/case. The random sampling will be non-differential between the vaccinated and unvaccinated.
+
+But why not compare cases with controls that have the same index date? People with the same index date are comparable in terms of the day-to-day pandemic context that gave rise to their testing. What is being suggested here is that we match cases and controls with the same index date. The issue is that it might be hard to find a control for every case. But matching could be considered to enhance the comparability.
