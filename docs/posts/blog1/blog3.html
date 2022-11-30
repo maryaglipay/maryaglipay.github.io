@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-11-29">
 
-<title>Mary Aglipay - Who are your controls in test-negative studies?</title>
+<title>Mary Aglipay - Limitations of the data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,12 +106,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Who are your controls in test-negative studies?</h1>
+<h1 class="title">Limitations of the data</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">R</div>
-    <div class="quarto-category">Covid-19</div>
-    <div class="quarto-category">study design</div>
-    <div class="quarto-category">test-negative</div>
+    <div class="quarto-category">data</div>
   </div>
   </div>
 
@@ -133,43 +130,18 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>One thing that comes up in test-negative studies is, who exactly are the controls? Repeat after me: your controls are participants in your study who tested negative. If you’ve been working with cohort data or RCT data a lot, this is not intuitive: we often think in terms of exposed and unexposed. Controls are not your unexposed; they are those who tested negative.</p>
-<p>The overall test effectiveness study will just compare those who test positive with those who test negative, full stop. [Note: you’ll still have to adjust for calendar date, because what might happen is that perhaps as the pandemic rolls on, as we change seasons, people are more likely to get vaccinated and also perhaps more likely to test positive. This biases the result toward the null]</p>
-<p>We can do interval analysis too-e.g., what is the vaccine effectiveness, or impact of vaccines, on children who were vaccinated only 14-29 days prior to their index date (remember that the index date is the day that they take their test). Another way of phrasing it is, what is the vaccine effectiveness 14-29 days after vaccination?</p>
-<p>In interval analysis, who are the controls? Again, they are still children who tested negative in that interval. How to know if they are in the interval? For vaccinated test-negatives (controls), you’ll have an ‘interval date’, which tells you how along ago vaccination happened. In our example, you’ll select vaccinated controls who vaccinated 14-29 days before their index date. For unvaccinated control, this interval date doesn’t really make any sense. From which date should we count the unvaccinated control (or case for that matter)?</p>
-<p>Remember our time zero is July 28, 2022 (when Ontario rolled out vaccines for children in this age group). We can calculate a ‘time interval’ for unvaccinated children between their index date and this date.</p>
-<p>Take for example, the stratified/interval analysis in children who tested 14-29 days ago. Let’s make a 2x2 table below.</p>
-<table class="table">
-<colgroup>
-<col style="width: 19%">
-<col style="width: 39%">
-<col style="width: 41%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Test negative</th>
-<th>Test positive</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Unvaccinated</td>
-<td>Unvaccinated 14-29 days ago</td>
-<td>Unvaccinated 14-29 days ago.</td>
-</tr>
-<tr class="even">
-<td>Vaccinated</td>
-<td>Vaccinated 14-29 days ago</td>
-<td>Vaccinated 14-29 days ago</td>
-</tr>
-</tbody>
-</table>
-<p>We should be looking at everyone 14-29 days prior to their index date, or 14-29 days ‘after vaccination’- but for the unvaccinated, ‘after vaccination’ doesn’t make sense because they were never vaccinated. But we can look at the interval between the roll-out date and their index date. As long as it was greater than 14-29 days, they can be considered. An index date that happened 90 days after roll-out for the unvaccinated can be included in the comparison of 14-29 days, because unvaccinated at 90 days also means unvaccinated at 60 days, and unvaccinated at 30 days. That means we can include everyone who is unvaccinated at an index date greater than the interval we are interested in, in our analysis, whether they are test negative or test positive.</p>
-<p>Other notes:</p>
-<p>Let’s talk about ‘follow-up,’ which is a bit of a tricky concept. Note that we can’t really talk about ‘incomplete’ or ‘complete’ follow-up in this analysis because outcome ascertainment happens at one point in time: the time of the test (see last paragraph in this blog post). But there is kind of a follow-up time for the vaccinated group, the time from vaccination to the index date; in the unvaccinated group, the ‘follow-up’ time is a bit arbitrary—it’s counted from time zero, date of vaccine rollout in Ontario. But remember, a person who is unvaccinated at their index date, which happens, for example, 90 days after time zero, is also unvaccinated at time 60, time 30.</p>
-<p>What about someone who with multiple tests–they tested negative at 1, then tested positive at another, and they changed their vaccine status during that time? Remember that our ‘anchor’ is the index date, the date that someone tested. For our analysis, among cases, we will take the first positive event. For controls (test negative), we will randomly sample the index date/case. The random sampling will be non-differential between the vaccinated and unvaccinated.</p>
-<p>But why not compare cases with controls that have the same index date? People with the same index date are comparable in terms of the day-to-day pandemic context that gave rise to their testing. What is being suggested here is that we match cases and controls with the same index date. The issue is that it might be hard to find a control for every case. But matching could be considered to enhance the comparability.</p>
+<p>A question I get often when I’m doing a talk is, “what are the limitations of the data that you’re using?” And it’s a great question. We should always think what our data can tell us and what it cannot.</p>
+<p>One of my first data sources is a large children’s cohort study. The strengths of this data is that it has rich, repeated measures about adherence to NPIs, about parent-reported infection, symptoms, sociodemographics, lifestyle, child health behaviours. It samples from primary care, which is great because we know that more than 95% of children access primary care in the first few years of life.</p>
+<p>However, it also comes with another limitations. I will frame these limitations in terms of the three types of bias: selection bias, measurement error, and confounding.</p>
+<p><strong>Selection bias:</strong> Like many other cohorts, it suffers from selection processes that make it easier for richer, more educated, whiter participants to participate in the study. This may limit its external generalizability. Another limitation, in the some vein, is that richer, more educated families tend to remain in the study longer than those who are not. What does that mean? Well, if richer, whiter people are more likely to adhere to masks, and they are also less likely to get infected, and it would bias the resut away from the null.</p>
+<p><strong>Measurement error:</strong> Like other studies that use survey data, there is a certain amount of measurement error that comes along with questionnaires. For example, families might have trouble recalling how many days their child was adherent to masks. There may be some measurement error associated with self-report of rapid antigen tests, which in themselves have imperfect diagnostic accuracy, which then must get reported correctly by parents. Moreover, the tests must be administered properly, which may not occur.</p>
+<p><strong>Confounding:</strong> One of the strengths of cohort studies is that they can collect really rich confounder information. For example, TARGet Kids! has great information not only on child NPI adherence, but they also have information on parent NPI adherence, household income, maternal and paternal education. However, there are measures that we have not collected–for example, as much as we can try to control for ‘health seeking behaviour’ through other measures (visits to the doctor, flu shot in past few months, perception about health), there may still may be some residual confounding.</p>
+<p>The next data source are population health administrative data. This is data that is usually collected for billing and administrative purposes. Strengths of administrative data include the fact that it is population-wide–in our data, we can capture every single community dwelling child that obtained a vaccine in the province. This means we have a lot of data–a lot more than if we were to look at, for example, cohort data–which enables us to get more precise estimates. Administrative is also fast and efficient- data is recorded in real time, enabling us to get answers quickly. And lastly, administrative data is extremely resource-efficient; we do not require RAs, infrastructure to collect this data, as it is already being collected for administrative and financial purposes.</p>
+<p>Because this data is not being collected for research purposes, it also comes with a number of drawbacks:</p>
+<p><strong>Selection biases</strong>: Selection biases still exist will health administrative data (even though they do capture every encounter with the healthcare system), because they require participants to have access to the healthcare system. Unequal access is common, and in our case, it is exacerbated by government restriction on testing at the end of December 2021. In the third study, we are restricted to participants who were able to access testing for their child. For the most part, this included children of essential workers working (including physicians). However, although government restirictions were the same across Ontario, the manner in which they were implemented from hospital to hospital differed. This may mean that the external generalizability of our results to the general Ontario population may be limited.</p>
+<p><strong>Measurement error</strong>: Health administrative data can suffer from undercoding or miscoding of variables. It is unlikely for vaccinations to be miscoded, given the stringency of the vaccination protocol and the tracking of every single dose. PCR testing does not have perfect sensitivity and specificity, though it is considered the gold standard for testing for SARS-CoV-2.</p>
+<p><strong>Confounding</strong>: Because this data is not collected for research purposes, there are a number of variables that may be important confounders for which we lack information. For example, many individual-level sociodemographics are not available–income, ethnicity, education. For our VE study, we use area-level sociodemographics as a proxy. These include neighbourhood income quintile, essential worker status quintile, and large household size quintile. These may or may not serve as good proxies for individual-level characteristics.</p>
+<p>These data sources come with their limitations. However, they also come with a number of complementary strengths- the cohort has information that ICES lacks, and ICES has information that the cohort lacks, and it also covers many many children. It is important to leverage these strengths to make the most out of available data to answer important questions about SARS-CoV-2 in children.</p>
 
 
 
