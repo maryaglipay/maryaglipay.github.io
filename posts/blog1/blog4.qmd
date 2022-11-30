@@ -1,0 +1,18 @@
+---
+title: "Machine learning - opportunities?"
+date: "2022-11-30"
+categories: [R, machine learning, causal inference]
+---
+
+OK, so for one of my projects, I'm using some pretty complicated analyses--in particular, something called the parametric g-formula, which sounds a little crazy and spaceship-y.  When you boil it down, all it's doing is standardizing, which essentially means finding weighted averages across all of the counfounder strata. 
+
+Although I wouldn't exactly call it machine learning (what is machine learning, really, anyway?), the parametric g-formula is considered 'advanced analytics' because it requires quite a bit of computing power.  In order to calculate those weighted averages, you need to need to run simulations so that you can get representation in each of those millions of combinations of confounder strata.  And you simulate the covariate history, you simulate the censoring or outcome, for each of the many weekly timepoints in my analysis.  This requires a ton of models.  And, as we know, models each come with many assumptions- linearity, normality of the residuals, that the variance of the residuals is constant across the the observations (homoscedasticity), that there are no unduly influential points.  When there are hundreds of models, model misspecification can produce a sizeable bias. 
+
+With the advent of machine learning methods, some of these assumptions might be relaxed.  Machine learning can predict the probability of each variable at each time-step (see Blakely et al., 2020), potentially being made 'more robust to model misspecification through machine-learning techniques" (Westreich et al, 2015).  These might include tree-based methods, random forests, and neural networks, for example.  
+
+It's interesting because I think a lot of the field has been sort of bemoaning the fact that machine learning applications are restricted to prediction-type research questions--can we predict, for example, who will get covid, based on this set of covariates?
+
+But even in causal inference methods, prediction can be part of the process.  In the parametric g-formula, we actually need to predict the covariate history and outcome for a large, simulated dataset.  We need not restrict ourselves to parametric models, though computationally, we may have increased challenges.  I suspect in the future, with even greater computing power, we will see more machine learning methods being applied in the causal inference space (as we already have!) This is an area of growth in the field of epidemiology. 
+
+
+
