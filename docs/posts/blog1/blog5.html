@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2022-12-02">
 
-<title>Mary Aglipay – blog</title>
+<title>Mary Aglipay - What is record-level quantitative bias analysis?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,39 +59,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -102,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Mary Aglipay</span>
     </a>
   </div>
@@ -112,11 +81,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="../../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page">
+    <a class="nav-link" href="../../blog.html">
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -135,151 +104,76 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">What is record-level quantitative bias analysis?</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">analysis</div>
+  </div>
+  </div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 2, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In my proposal, there are a number of times when I mention that I am going to be doing record-level quantitative bias analysis. Though I am explicit about what the required bias parameters are, what will I do with those bias parameters after I’ve found them?</p>
+<p>In the Fox and Lash book (2020), they list a couple of steps needed to do record level QBA. These are:</p>
+<ol type="1">
+<li>Assign probability distributions to each of the bias parameters</li>
+<li>Use simple bias methods to generate bias-adjusted data to inform the bias analysis and apply bias parameters probabilistically</li>
+<li>Save bias adjusted estimate and repeat steps 4a to c</li>
+<li>Summarize bias adjusted estimates with a frequency distribution that yields a central tendancy and simulation interval</li>
+</ol>
+<p>Let’s go through them in detail.</p>
+<section id="assign-probability-distributions-to-each-of-the-bias-parameters" class="level4">
+<h4 class="anchored" data-anchor-id="assign-probability-distributions-to-each-of-the-bias-parameters">1. Assign probability distributions to each of the bias parameters</h4>
+<p>Once we have established the bias parameters for your analysis (in the case of outcome misclassification, it is SE, SP, PPV, NPV), first, it’s important to remember that there’s error around each of your bias parameters. Even though you found a single value from, for example, the literature, there is a range of plausible values for each bias parameter. We can assign a distribution of probabilities around the estimated parameter (e.g.&nbsp;trapezoidal, normal distribution, uniform distribution)</p>
+</section>
+<section id="use-simple-bias-analysis-methods-to-incorporate-uncertainty-in-the-bias-parameters-and-random-error" class="level4">
+<h4 class="anchored" data-anchor-id="use-simple-bias-analysis-methods-to-incorporate-uncertainty-in-the-bias-parameters-and-random-error">2. Use simple bias analysis methods to incorporate uncertainty in the bias parameters and random error</h4>
+<section id="a.-obtain-using-the-bias-parameters-calculate-misclassification-adjusted-sensitivity-specificity-ppv-npv-of-the-outcome-for-every-record-in-the-dataset." class="level5">
+<h5 class="anchored" data-anchor-id="a.-obtain-using-the-bias-parameters-calculate-misclassification-adjusted-sensitivity-specificity-ppv-npv-of-the-outcome-for-every-record-in-the-dataset."><strong>2a. Obtain using the bias parameters, calculate misclassification-adjusted sensitivity, specificity, PPV, NPV of the outcome for every record in the dataset.</strong></h5>
+<ol type="1">
+<li><p>Create a simple contingency table of your exposure-outcome relationship.</p></li>
+<li><p>Use Monte Carlo sampling techniques to select bias parameter values from the probability distribution in 1.</p></li>
+<li><p>Use the sampled bias parameter to correct the cells in the 2x2 exposure-outcome contingency table. Insert the values of the corrected cells as new variables for the first record.</p></li>
+<li><p>From these four variables, calculate sensitivity, specificity, NPV, PPV. Insert these values as new variables for the first record.</p></li>
+<li><p>Repeat ii) to iv) again for all the records in your dataset.</p></li>
+</ol>
+</section>
+<section id="b.-reclassify-the-outcome-use-reclassified-outcome-to-obtain-new-estimate-of-association-and-incorporate-random-error" class="level5">
+<h5 class="anchored" data-anchor-id="b.-reclassify-the-outcome-use-reclassified-outcome-to-obtain-new-estimate-of-association-and-incorporate-random-error"><strong>2b. Reclassify the outcome, use reclassified outcome to obtain new estimate of association, and incorporate random error</strong></h5>
+<ol type="1">
+<li><p>Use Bernoulli trials to use the values calculated in A to determine if the record had the outcome or was censored–the ‘reclassified’ outcome status.</p></li>
+<li><p>Use the reclassified outcome status in your new regression analyses.</p></li>
+<li><p>Simulate random error and incorporate it into your estimate.</p></li>
+</ol>
+</section>
+</section>
+<section id="save-this-estimate-and-repeat-all-steps-above-for-x-number-of-iterations." class="level4">
+<h4 class="anchored" data-anchor-id="save-this-estimate-and-repeat-all-steps-above-for-x-number-of-iterations.">3. Save this estimate and repeat all steps above for X number of iterations.</h4>
+</section>
+<section id="summarize-the-distribution-of-bias-adjusted-estimates-using-a-simulation-interval." class="level4">
+<h4 class="anchored" data-anchor-id="summarize-the-distribution-of-bias-adjusted-estimates-using-a-simulation-interval.">4. Summarize the distribution of bias-adjusted estimates using a simulation interval.</h4>
 
 
+</section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="mediation" data-listing-date-sort="1669957200000" data-listing-file-modified-sort="1670033831750" data-listing-reading-time-sort="2.205">
-<div class="body">
-<a href="./posts/blog1/blog6.html">
-<h3 class="no-anchor listing-title">
-Decomposition and probabilities
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Now to move onto something a bit different. Decomposition! Decomposition is the process of separting effects into an indirect and direct effects for mediation analysis.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/blog1/blog6.html">
-<div class="listing-date">
-Dec 2, 2022
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="data" data-listing-date-sort="1669698000000" data-listing-file-modified-sort="1669818828355" data-listing-reading-time-sort="4.165">
-<div class="body">
-<a href="./posts/blog1/blog3.html">
-<h3 class="no-anchor listing-title">
-Limitations of the data
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-A question I get often…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/blog1/blog3.html">
-<div class="listing-date">
-Nov 29, 2022
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="R,machine learning,causal inference" data-listing-date-sort="1669784400000" data-listing-file-modified-sort="1669823839197" data-listing-reading-time-sort="1.905">
-<div class="body">
-<a href="./posts/blog1/blog4.html">
-<h3 class="no-anchor listing-title">
-Machine learning - opportunities?
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-OK, so for one of my projects, I’m using some pretty complicated analyses–in particular, something called the parametric g-formula, which…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/blog1/blog4.html">
-<div class="listing-date">
-Nov 30, 2022
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="R,Covid-19,study design,test-negative" data-listing-date-sort="1669611600000" data-listing-file-modified-sort="1669736773439" data-listing-reading-time-sort="4.795">
-<div class="body">
-<a href="./posts/blog1/index.html">
-<h3 class="no-anchor listing-title">
-Test Negative Studies: Let’s Talk About It
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-If you’ve been keeping up with the Covid-19 vaccine literature, there may be a study design that sticks out to you: a test-negative study. Huh? What’s that?
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/blog1/index.html">
-<div class="listing-date">
-Nov 28, 2022
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="analysis" data-listing-date-sort="1669957200000" data-listing-file-modified-sort="1670198037174" data-listing-reading-time-sort="2.105">
-<div class="body">
-<a href="./posts/blog1/blog5.html">
-<h3 class="no-anchor listing-title">
-What is record-level quantitative bias analysis?
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-In my proposal, there are a number of times when I mention that I am going to be…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/blog1/blog5.html">
-<div class="listing-date">
-Dec 2, 2022
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="R,Covid-19,study design,test-negative" data-listing-date-sort="1669698000000" data-listing-file-modified-sort="1669745235478" data-listing-reading-time-sort="3.935">
-<div class="body">
-<a href="./posts/blog1/blog2.html">
-<h3 class="no-anchor listing-title">
-Who are your controls in test-negative studies?
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-One thing that comes up in test-negative studies is, who exactly are the controls? Repeat after me: your controls are participants in your study who tested negative. If…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/blog1/blog2.html">
-<div class="listing-date">
-Nov 29, 2022
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

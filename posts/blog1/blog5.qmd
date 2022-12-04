@@ -1,0 +1,46 @@
+---
+title: "What is record-level quantitative bias analysis?"
+date: "2022-12-02"
+categories: [analysis]
+---
+
+In my proposal, there are a number of times when I mention that I am going to be doing record-level quantitative bias analysis. Though I am explicit about what the required bias parameters are, what will I do with those bias parameters after I've found them?
+
+In the Fox and Lash book (2020), they list a couple of steps needed to do record level QBA. These are:
+
+1.   Assign probability distributions to each of the bias parameters
+2.  Use simple bias methods to generate bias-adjusted data to inform the bias analysis and apply bias parameters probabilistically
+3.  Save bias adjusted estimate and repeat steps 4a to c
+4.  Summarize bias adjusted estimates with a frequency distribution that yields a central tendancy and simulation interval
+
+Let's go through them in detail.
+
+#### 1. Assign probability distributions to each of the bias parameters 
+
+Once we have established the bias parameters for your analysis (in the case of outcome misclassification, it is SE, SP, PPV, NPV), first, it's important to remember that there's error around each of your bias parameters. Even though you found a single value from, for example, the literature, there is a range of plausible values for each bias parameter. We can assign a distribution of probabilities around the estimated parameter (e.g. trapezoidal, normal distribution, uniform distribution)
+
+#### 2. Use simple bias analysis methods to incorporate uncertainty in the bias parameters and random error
+
+##### **2a. Obtain using the bias parameters, calculate misclassification-adjusted sensitivity, specificity, PPV, NPV of the outcome for every record in the dataset.**
+
+1.  Create a simple contingency table of your exposure-outcome relationship.
+
+2.  Use Monte Carlo sampling techniques to select bias parameter values from the probability distribution in 1.
+
+3.  Use the sampled bias parameter to correct the cells in the 2x2 exposure-outcome contingency table. Insert the values of the corrected cells as new variables for the first record.
+
+4.  From these four variables, calculate sensitivity, specificity, NPV, PPV. Insert these values as new variables for the first record.
+
+5.  Repeat ii) to iv) again for all the records in your dataset.
+
+##### **2b. Reclassify the outcome, use reclassified outcome to obtain new estimate of association, and incorporate random error**  
+
+1.  Use Bernoulli trials to use the values calculated in A to determine if the record had the outcome or was censored--the 'reclassified' outcome status.
+
+2.  Use the reclassified outcome status in your new regression analyses.
+
+3.  Simulate random error and incorporate it into your estimate.
+
+#### 3. Save this estimate and repeat all steps above for X number of iterations.
+
+#### 4. Summarize the distribution of bias-adjusted estimates using a simulation interval.
