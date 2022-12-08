@@ -1,0 +1,52 @@
+---
+title: "Assumptions of all the statistical models!"
+date: "2022-12-08"
+categories: [analysis]
+bibliography: references.bib
+---
+
+Let's talk assumptions!
+
+#### Project 1: Single Group Interrupted time series:
+
+(See @Warton)
+
+1.  Pre-intervention trends are linear (can be challenging when there are only a few pre-intervention time points)
+2.  Exchangeability between pre and post periods--i.e. there is nothing that changes between our population before and after the interruption.
+3.  Adequate number of measures before and after the intervention
+4.  No interruptions affecting the outcome occur within the study period
+5.  Intervention is instantantenous.
+
+Benefits of having a control group: the unexposed group will capture temporal changes that would affect the intervention group in the same fashion had the interruption not occurred.
+
+#### Project 2: Parametric g-formula
+
+See @hernán
+
+1.  Exchangeability: No confounding
+2.  Positivity: There should be all levels of the exposure in all confounder strata
+3.  All assumptions required for regression equations in general:
+    1.  Logistic Regression
+
+        1.  Independent errors
+
+        2.  linearity (for logistic regression, linearity in the logit for continuous variables)
+
+        3.  Strongly influential outliers
+
+    2.  Linear Regression
+
+        1.  Linearity
+
+        2.  Multivariate normality
+
+        3.  No autocorrelation
+
+        4.  Homoscedasticity (error term is the same across all values of the independent variables)
+
+#### Project 3: Cox proportional hazards model 
+
+See @kleinbaum2005
+
+1.  Proportional hazards
+2.  Linearity between log hazard and covariate

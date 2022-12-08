@@ -1,0 +1,55 @@
+---
+title: "What is an interrupted time series analysis?"
+date: "2022-12-08"
+categories: [analysis]
+bibliography: references.bib
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+"In its simplest form, an ITS is modelled using a regression model (such
+as linear, logistic, or Poisson) that includes only three time based
+covariates, whose regression coefficients estimate the pre-intervention
+slope, the change in level at the intervention point, and the change in
+slope from pre-intervention to post-intervention" @kontopantelis2015
+
+$logit(Y)=B_0 + B_1 time + B_2 after + B_3time*after$
+
+$B_1$ is interpreted as the pre-intervention slope
+
+$B_2$ is interpreted as the jump in Y after the interruption
+
+$B_3$ is interpreted as the post-intervention slope
+
+##### Strengths of the interrupted time series design
+
+1\) Compared to pre-post designs: Interrupted time series analyses can
+take into account the pattern, or slope, of the trend before and after
+the intervention and determine whether the was a real difference. For
+example, @penfold2013 uses the example of an intervention to prevent
+medication errors. See Figure 1 below. If we were just to use a pre-post
+analysis, we might erroneously make the conclusion that the intervention
+caused a change in the medication error rate. However, if we examine the
+slope, it appears that the trend of medication error was downward
+anyway, and the intervention did little to change that trend.
+
+![](images/Screen%20Shot%202022-12-08%20at%204.55.58%20PM.png)
+
+2\) Ease of interpretation. The graphs that come out of an ITS is
+generally well-understood
+
+##### Limitations of Interrupted Time Series Design
+
+1.  Preferably 8 or 9 measures on each side of the interruption
+
+2.  More likely to be impacted by cyclical trends (pre and post periods
+    should be matched on cycle) - this is especially key for things that
+    influenza. We should try to compare NPI slopes within the same
+    season
+
+#### Comparison with D-I-D Design
+
+D-I-D design measures the change in outcome pre and post intervention
+for an exposed group and a control group, and then finds these
+diffferences to see the "difference in differences" (see @warton).
