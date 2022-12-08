@@ -1,0 +1,42 @@
+---
+title: "Please, what is the parametric g-formula?"
+date: "2022-12-08"
+categories: [analysis]
+bibliography: references.bib
+---
+
+The parametric g-formula has terrible branding. The name sounds like some kind of rocket booster requiring advanced-level physics to operate it.
+
+And although it may sounds complicated, it really comes to thinking about it as being akin to standardization. In epi 101, we learn that standardization really means finding the weighted averages that make two groups comparable (if we think about clinical trials, the whole point of randomizing people into two groups is to make them more comparable- this is called exchangeability). For example, say we want to see if living in country A causes cancer, compared to living in country B. But say we know that age and sex are associated with cancer (e.g. older individuals and women are more likely to have this kind of cancer), and country A just happens to have a high proportion of women and older individuals. What we want to do is weight the groups in a way that they have similar distributions of women and older people, so that they are more comparable. The general formula for a standardized estimate of Y is
+
+![where $A$ is the level of exposure, $C$ is censoring, and $L$ are the level of covariates. ](images/Screen%20Shot%202022-12-08%20at%203.11.17%20PM.png){width="288"}
+
+When there aren't many variables, we can get this non-parametrically (i.e. we don't need to use models!). Basically, what we need to do is find the mean value of Y in each of the confounder strata (that's the conditional means, the $E[Y|A=a,C=0,L=l]$ part), and weight it (multiply it) by the probability of being in that stratum (that's the $Pr[L=l]$ part. So, in our mortality example, let's say we only had two age groups: young and old. We would find the mean value of $Y$ in young women and multiply it by the probability of being a young woman, the mean value of $Y$ in old women and multiply it by the probability of being an old woman, the mean value of $Y$ in young men and multiply it by the probability of being a young man, and the mean value of $Y$ in old men and multiply it by the probability of being a young man. Then we would add up all these terms, and voila, there's your standardized risk of mortality for that specific country.
+
+Now say we have a ton of variables- sex, age, education, income, comorbidities, children, marital status, etc. It's going to be really hard to do this non-parametrically because there's simply not enough data to fill the thousands of strata created by every combination of confounders.
+
+We need to resort to modelling. What we can do is develop a regression, conditioning on the confounders! After all, what a regression is really trying to do is model the \$E\[Y\|A=a, C=0, L=l\]\$. Fantastic! Then what you do is using your data, you set $A$ to equal the value of country A. You find the predictions.
+
+Now, you say-should we weight by the probability of being in that stratum? Again, it's hard to find this when not every stratum is filled (it's asking your data- what's the probability of being an old woman, with this amoung of education, this income, this particular comorbidity, 6 children, unmarried, etc). Fortunately, there's a fun trick- the weighted mean can be written as the [double expectation.]{.underline} That is,
+
+$\sum_l E[Y|A=a, C=0, L=l] \times Pr(L=l)= E[E[Y|A=a, C=0, L=l] \times Pr(L=l)]$
+
+What! What does this mean- it means we can find the mean of the conditional means and this ends up being your standardized mean! What! Amazing. So in summary, there are three steps:
+
+1.  Model the conditional mean
+2.  Predict the value of the conditional means for all of your confounder strata combinations.
+3.  Find the mean of the conditional means in each group; find the risk difference, risk ratio, etc.
+
+The parametric g-formula for time varying-exposures takes it a step further by modelling both the outcome and each of the time-varying covariates at each time point, and then applying [simulations]{.underline}. Why might we need simulations? Well, if we were solely to rely on our dataset for step 2, we might not have people who fulfill all of those combinations of confounder strata; so we wouldn't be able to estimate the sum of the conditional means.
+
+How do you do a simulation?
+
+You use something called Monte Carlo simulations--so based on your models from Step 1, you get predicted probabilities of Y, based on your covariates. Then you flip biased coins to determine which value a person will get.
+
+This is where it gets interesting. THe first simulated dataset you'll make is basically like your original dataset, except with far more people. But nothing's been done, you haven't altered your exposure in any way. This is the 'natural course' dataset. The second dataset however, whenever you simulate your time varying exposure, whatever value you get, you'll increase that value by ONE DAY. This is the 'increased by 1 day dataset'.
+
+Then, you predict the value of your conditional means using your simulated dataset--this time, you should have enough people in every combination of your confounder strata.
+
+Then, you find the mean of the conditional means for the 'natural course' dataset. And you find the mean of the conditional means for the 'increased by one day' dataset. If you subtract these, you will have the marginal mean difference! Wow!
+
+Further recommended reading is available in @hernán and @keil2014.

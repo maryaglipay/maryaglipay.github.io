@@ -8,14 +8,14 @@ In my proposal, there are a number of times when I mention that I am going to be
 
 In the Fox and Lash book (2020), they list a couple of steps needed to do record level QBA. These are:
 
-1.   Assign probability distributions to each of the bias parameters
+1.  Assign probability distributions to each of the bias parameters
 2.  Use simple bias methods to generate bias-adjusted data to inform the bias analysis and apply bias parameters probabilistically
 3.  Save bias adjusted estimate and repeat steps 4a to c
 4.  Summarize bias adjusted estimates with a frequency distribution that yields a central tendancy and simulation interval
 
 Let's go through them in detail.
 
-#### 1. Assign probability distributions to each of the bias parameters 
+#### 1. Assign probability distributions to each of the bias parameters
 
 Once we have established the bias parameters for your analysis (in the case of outcome misclassification, it is SE, SP, PPV, NPV), first, it's important to remember that there's error around each of your bias parameters. Even though you found a single value from, for example, the literature, there is a range of plausible values for each bias parameter. We can assign a distribution of probabilities around the estimated parameter (e.g. trapezoidal, normal distribution, uniform distribution)
 
@@ -33,7 +33,7 @@ Once we have established the bias parameters for your analysis (in the case of o
 
 5.  Repeat ii) to iv) again for all the records in your dataset.
 
-##### **2b. Reclassify the outcome, use reclassified outcome to obtain new estimate of association, and incorporate random error**  
+##### **2b. Reclassify the outcome, use reclassified outcome to obtain new estimate of association, and incorporate random error**
 
 1.  Use Bernoulli trials to use the values calculated in A to determine if the record had the outcome or was censored--the 'reclassified' outcome status.
 
