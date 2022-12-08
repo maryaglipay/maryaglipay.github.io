@@ -24,20 +24,21 @@ $B_3$ is interpreted as the post-intervention slope
 
 ##### Strengths of the interrupted time series design
 
-1\) Compared to pre-post designs: Interrupted time series analyses can
-take into account the pattern, or slope, of the trend before and after
-the intervention and determine whether the was a real difference. For
-example, @penfold2013 uses the example of an intervention to prevent
-medication errors. See Figure 1 below. If we were just to use a pre-post
-analysis, we might erroneously make the conclusion that the intervention
-caused a change in the medication error rate. However, if we examine the
-slope, it appears that the trend of medication error was downward
-anyway, and the intervention did little to change that trend.
+1.  Compared to pre-post designs: Interrupted time series analyses can
+    take into account the pattern, or slope, of the trend before and
+    after the intervention and determine whether the was a real
+    difference. For example, @penfold2013 uses the example of an
+    intervention to prevent medication errors. See Figure 1 below. If we
+    were just to use a pre-post analysis, we might erroneously make the
+    conclusion that the intervention caused a change in the medication
+    error rate. However, if we examine the slope, it appears that the
+    trend of medication error was downward anyway, and the intervention
+    did little to change that trend.
 
 ![](images/Screen%20Shot%202022-12-08%20at%204.55.58%20PM.png)
 
-2\) Ease of interpretation. The graphs that come out of an ITS is
-generally well-understood
+2.  Ease of interpretation. The graphs that come out of an ITS is
+    generally well-understood
 
 ##### Limitations of Interrupted Time Series Design
 
