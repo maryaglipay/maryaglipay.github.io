@@ -1,0 +1,18 @@
+---
+title: "But wait, isn't the effectiveness of masks known?"
+date: "2022-12-09"
+categories: [research questions]
+bibliography: references.bib
+---
+
+It's a good question! Isn't the effectivness of masks already known? Why do we have to use all these fancy methods, why did we collect all of this data if we already know?
+
+First, what I want to do is recognize the many studies out there who have provided evidence for mask wearing- they have really guided many the public health recommendations today.
+
+Our goal is to provide a measure of the impact of individual-level behaviour on individual level risk for children over the course of the pandemic. And this is where the evidence becomes very very sparse.
+
+There has been, for example, a well-designed cluster ranodmized trial (see @abaluck2021) in Bangladesh that found that a mask intervention that sought to provide and educate villages about masks saw a 9% reduced seroprevalence of infection compared to villages without the intervention. However, this was done in adults, in an entirely different context.
+
+THere have been several studies looking at community-wide implementation or removal of mask mandates, for example, a very recent one looked at the removal of masking policy in Massachusetts school districts, and found that the lifting of masking requirements was associated with an additional 44.9 covid cases per 1000 students and staff (see @cowger2022) . That's pretty convincing. But again, this is a community-wide intervention, it doesn't quite get at the impact of individual level action on individual risk.
+
+Also, this study, and many other studies looking looking at the addition of or removal of a mandate are really just looking at a single point in time. My goal is to to examine the impact of individual level adherence to masks on individual risk in children over the span of the entire pandemic. This longitudinal nature of this study is important because 1) it helps us to establish temporality, which is unavailable in cross sectional studies and 2) the nature of the pandemic, people's appetite toward wearing masks and adhering to NPIs has changed over time. I think to increase applicability of the finding,
