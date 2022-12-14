@@ -1,0 +1,16 @@
+---
+title: "Controlled Direct Effects- What is going on?"
+date: "2022-12-10"
+categories: [causal mediation]
+---
+
+In a typical IPW estimate, you find weights for the exposure in order to ensure balance across the exposure.  You then insert the weights into a model for the outcome with the exposure as the covariate (you can also insert other covariates here for a 'doubly robust' approach).  The beta coefficient here will get you the marginal estimate of the effect of the exposure on the outcome   
+
+When we're thinking about controlled direct effects, the effect of an exposure on an outcome if we could set the mediator to a particular value, then we find weights for the exposure and the mediator in order to ensure no unmeasured confounding between the outcome and the exposure and the mediator.  Now, we insert the weights into a model for the outcome with exposure, mediator, and an interaction between them.  Now can we interpret the values of the coefficents in the CDE model?  No, we can't!  Because including the value of the mediator explains away some of the effect of the exposure.
+
+Instead what we need to do is standardize the estimates--find the predicted value of each of the scenarios (Exposure ON, mediator set to 1; Exposure OFF, mediator set to 1), and then average over them!  These will give us standardized estimate (e.g. risk) of the exposure-outcome relationship, without worrying about about the mediator in the model!
+
+
+
+
+

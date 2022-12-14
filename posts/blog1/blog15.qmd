@@ -1,0 +1,296 @@
+---
+title: "Defend!"
+date: "2022-12-10"
+categories: [thesis]
+---
+
+This is a fun blog where I basically I pick up my proposal and explain how I would defend it, in three brief points. I've already gone through my proposal and did the criticizing! Let's go!
+
+1.  Can you elaborate on the prevalence of neurological and cardiovascular sequelae in your proposal?
+
+-   Cognitive deficits \~ cumulative incidence is 5% vs 3%
+-   Seizures cumulative incidence is 3% vs 1%
+-   MISC - estimates from the states have this at 2 per 100 000.
+-   Reports of dysrhythmia and increased inflammatory markers.
+
+2.  What is the impact of your work?
+    1.  Some of the most sweeping changes to public health in recent memory.
+
+    2.  A record of what children did during this pandemic and an evaluation of the impact
+
+    3.  If we are the kind of healthcare system that cares about evidence-based interventions and evidence-based messaging, this is something we'll need going forward for this pandemic and fof future ones.
+3.  Do you think that this will change the minds of parents?
+    1.  That's hard to say- We have to respect the value systems and realities of families
+
+    2.  I am the kind of parent who really values science, and evidence--but I also recognize that I have immense privilege that helps me not only to carry out some of the NPIs, but to understand and respect the scientific literature.
+
+    3.  My job is to carry out the work, provide the evidence, and help families and policymakers carry out informed decision making, not to change their mind.
+4.  How will you deal with a null result?
+    1.  One thing to do is to look at the effect size. If we find that the effect is large, and we just don't have enough precision around our estimate, perhaps it's an issue with
+
+    2.  Another thing we'll have to think carefully is about the comparison we want to make, about the trial we're looking to emulate. And it's about a child increasing their adherence by one day a week. Maybe one day isn't enough. And we're not asking their mother, father, teacher, classmates, to increase adherence by one day- we're asking children. maybe that's not enough either and we have to think about these.
+5.  How will your results apply now that we're looking at re-infections
+    1.  You're right. Conversation is turning toward re-infection
+
+        1.  My second study is looking at time to first infection; so we're not really looking at re-infection per-se, using any kind of recurrent event analysis, I think mainly in an effort to simplify an already complex analysis.
+
+            1.  But I think re-infection is an important question, and I think something for a future study, particularly because we know that in the omicron period offers very little protection.
+
+                1.  This project is a start, and I think can certainly lend itself to other kinds of analysis.
+
+    2.  my third study is not looking at first infection per se, but infection over our study period. This includes children with and without previous covid infection.
+6.  How will you deal with a null result for VE?
+    1.  First we have to deal with our checks and balances. Did we account for all confounders? Are there selection biases at play? Were we able to measure everything accurately. Were our models specified correctly?
+
+    2.  First thing to do is look at the point estimate. Is it big? Then look at the precision around that estimate. Perhaps we simply did not have enough children testing with PCR to find enough results
+
+    3.   And then, if we think we've found a true, null result. This is really important information too. We'll have to compare to other studies in this age group to see if it's consistent. Work closely with a knowledge broker.
+7.  
+
+------------------------------------------------------------------------
+
+Project 1
+
+2\. Why a summary measure?
+
+-   will be doing each behaviour individually as well
+-   summary measure an overall measure of adherence based on 6 behaviours advocated by public health
+-   true that some behaviours are very similar, may weigh more in summary measure; scale development in this area needed
+
+3.  How do you expect those who remain in the study and those who drop out to be different?
+
+-   processes the give rise to initial participation in research are often the ones that help retain people
+-   socioeconomic indicators: family income, maternal ethnicity, employment, dwelling type, income support, forward sorting area, essential worker status, infection status.
+-   including these factors in the model adjusts for them- so holding these factors equal, what is the expected value of adherence.
+
+4.  Why not weight rather than condition?
+
+-   weighting is also perfectly valid--can do inverse probability of censoring weights
+-   I suspect results will be similar
+-   adjustment gives you a result that is straightforward, intuitive but we can certainly consider weights
+
+5.How did you come up with this list of baseline confounders? - parents of the exposure, parents of the outcome, and non-instrument - literature - DAG
+
+6.  Why did you decide to do an interrupted time series analysis?
+
+-   lent itself well to the question, figuring out the jump and drop in adherence, and the trends over time
+-   also good since we have multiple time points before and after the drop
+-   it's relatively well easy to interpret
+
+7.  Why not a difference in differences analysis?
+
+-   require a control group that did not experience closures at same time
+-   control group needs to be similar socially, demographically, politically - I'm not sure I have a similar one
+-   I don't have NPI measures anywhere else
+
+8.  How will you deal with the cadence changes?
+
+-   try to treat it as continuous as much as possible.
+-   there is going to be interpolation between measures, but cadence changes where necessary to keep engagement up in the cohort and avoid attrition.
+-   in the event where we find we just don't have enough time points to assess jump/drop adherence before and after the interruption, we'll consider a pre-post analysis, which is not as strong and doesn't enable you to see slopes or immediate jumps for that matter. We consider synthetic controls--for example, there's a cohort out in Montreal that may or may not use similar measures to our own, but as to the availability of the data, we're not certain.
+
+9.  Why random intercepts and not random slopes?
+    -   I think we could consider random slopes too--if we think there's going to be a large variation in NPI adherence over time within individual and within family.
+    -   Plan is to start simple and build complexity
+    -   Use likelihood ratio tests to see if adding random slopes contributes significantly to the fit of the model
+10. Why does your SS calculation consider 0.5 days difference a week an important change?
+    -   Half a day seemed a good place to start.
+    -   Considered going down as low as 0.25 days, means you'll need about 1300 participants in the study.
+11. Can you consider splines in segmented linear mixed effects regression?
+    -   Great question. If I want to be able to compare slopes before and after the jump, this will be hard to do in a straightforward way with splines.
+    -   We'll have to choose a timepoint before and after the jump to compare.
+12. Why did you consider such large loss to follow-up?
+    -   Great question. We know that the cohort study had really excellent follow-up after 6 months, as high as 80%.
+
+    -   We know that this has declined since then- the extent to which it has declined, I haven't yet seen the data yet, so I can't comment here.
+
+    -   We'll try to mitigate this by:
+
+        -   adjusting for factors associated with censoring
+
+        -   we'll use multiple imputation to impute covariates
+
+        -   really consider the factors that are on that backdoor path opened by only including the non-censored, and adjusting where we can to block that path.
+
+        -   Consider inverse probability of censoring weighting/ standardization methods
+13. What will be the impact of large loss to follow-up on your results?
+    -   If there is substantial drop-out, we are going to have a consideral selection bias probelm to worry about. And the direction and size of that bias is hard to say at this stage.
+
+    -   and we'll have to use every tool at our disposal to help it
+
+        -   Inverse probability of censoring weighting, standardization by censoring
+
+            -   Multiple imputation,
+
+            -    Examining the backdoor paths
+14. What chronic conditions are excluded from your cohort?
+    1.  TARGet Kids! is about Healthy growth
+
+        1.  Severe congenital abnormalities
+
+        2.  Prader-Willi syndrome
+
+        3.  Failure to Thrive
+
+        4.  \
+
+------------------------------------------------------------------------
+
+**Project 2**
+
+1.  How did you choose the variables?
+    -   Figure 2 is not the entire list, this is for demonstrative purposes
+
+    -   Appendix has a big list of variables that were chosen by confounding criteria according to Vanderwheele and Shpitser-includes things like sociodemographics, parent occupation and financial security, family history of illness and pregnancy, childcare arrangement, public health preventive measures, child health condition, parent health condition, infection status, etc.
+
+    -   Now, this is a big list. And there might be limits to what our models can accommodate, so we may have to choose the variables that are most proximal to our outcome
+
+    -   The only way to do this is via DAG, so we'll have to draw an extensive DAG.
+2.  Are you worried you are putting too many variables in the model?
+    -   Yes, there are some guidelines on how many variables we can put in a model per number of outcomes. The latest by Harrell is 15 events per outcome. If we think about infection rate at about 13% (which is low), that will give us about 170-200 outcomes, which means about 10-13 covariates.
+
+    -   This is a rule of thumb and we will have to play this by ear depending on how well the model converges, fit statistics, etc.
+3.  What kind of fit statistics?
+    -   For our linear models, plots of residuals to ensure normality across each of covariates, and heteroscedasticity--plotting residuals across observations. ROC curves. Measures of sensitivity and specificity.
+4.   How will changing RAT availability change your results?
+    -   What this means is that the degree of misclassification of the outcome will potentially over time.
+
+    -   Misclassification will depend on degree of availability of RATS, and the use of those rapid antigen tests.
+
+    -   The direction and degree to which misclassification will impact results will depend on other covariates in the data (it is differential!)
+
+    -   Luckily, we do have quarterly measures of serology, which means we have bias parameters that will change over time--so recognize that the degree to which this misclassification bias impacts our results is going to change over time. and that's key.
+5.  How do we account for contextual changes?
+    1.  Contextual changes act as really important confounders
+
+    2.  important to adjust for them or
+
+    3.  think of the downstream factors that we think can be proximal confounders in order to block those backdoor paths.
+6.  How do we account for clustering in parametric g-formula?
+    1.  Clustering is an issue having to do with the standard errors
+
+    2.  Standard errors will look falsely narrow
+
+    3.  There are cluster bootstrap methods that I am exploring.
+7.  Recruitment is open longitudinal.
+8.  will you find a different in risk?
+    1.  We will find a hazards ratio
+
+    2.  This is a relative difference in risk in the counterfactual
+
+        1.  So not an absolute difference, but a relative difference
+9.  Why not use something like the e value
+    1.  The e value is the minimum association with Exposure and the outcome that would be needed to explain away the effect
+
+    2.  Received criticism
+
+        1.  Even if you have a high e value, it is possible that cumulative unmeasured confounding adds up to be more than the value of the e value
+
+        2.  also, doesn't take into account correlations between unmeasured confounders and other variables,
+10. Why not use marginal structural models for time-varying exposures?
+    1.  Weights can become very unstable with marginal structural models
+
+    2.  because need to multiply weights at every time point; this means weights become very big.
+
+    3.  Also, from my understanding parametric g-formula has the edge when it comes to positivity violations--so the idea that we might not be able to see each level of confounder in all levels of covariate strata.
+11. What are some other examples where the parametric g-formula has been applied?
+    1.   Mechanical ventilation in the ICU and mortality.
+
+    2.  air quality and mortality
+
+    3.  bone marrow transplant and mortality
+
+------------------------------------------------------------------------
+
+**Project 3.**
+
+1.  Why not use propensity matching rather than test negative?
+
+    1.  important to consider other ways of doing this study
+
+    2.  Propensity matching is more challenging to do when you've got a time-dependent exposure, such as vaccination. Propensity scores are typically generated for each individual at study entry. But children who vaccinated very early in the study are different than those who vaccinated toward the end.
+
+        1.  So you need to conduct time-dependent propensity score matching, where at each time point, you find a propensity score match between a vaccinated individual and an unvaccinated individual.
+
+    3.  I think there are some efficiency things you might have to consider here--you might not find a suitable match for every vaccinated individual at every time point, even at large sample sizes.
+
+    4.   Can you walk us through some of the selection bias test-negative studies can present?
+
+        1.  Yes. The first has to do with external generalizability. We are only looking at children who test. They are very different from children who do not access testing, for a myriad of reasons, including income, resources, time, distance to clinic, etc.
+
+        2.  
+
+        3.  
+
+        4.  Type 2 selection bias--\> effect modification of selection for the relationship between exposure E and D.
+
+    5.  Tell me about the datatsets in ICES and how you will use them
+
+    -   DIN - Drugs list. To figure out if they had flu vaccine; to figure out if they are on immunosuppressive medication
+    -   PCCF - Postal code conversion file. For neighbourhood income quintile.
+    -   CORR - Canadian Organ Replacement Registry. For exclusion criteria- solid organ transplant
+    -   DAD - Discharge Abstract Database. For exclusion criteria- immunocomp.
+    -   NACRS- National Ambulatory Care Reporting System. For exclusion criteria - immunocomp.
+    -   ODB - For flu shot,
+    -   OHIP - for linking datasets
+    -   SDS - Same day surgery. For immune disorder flag.
+    -   ASTHMA - Ontario Asthma Dataset.
+    -   HIV - Ontario HIV Dataset. For immune disorder flag.
+    -   OCCC - Ontario Crohn's and COlitis Cohort dataset. FOr immune disorder flag.
+    -   ODD  - Ontario Diabetes Dataset. For comorbidities
+    -   CENSUS - For area level ethnicity data
+    -   RPDB - Registered Persons Database. For figuring out age, sex, alive/ dead.
+    -   OLISC19 - OLIS Covid-19 Laboratory data
+    -   ONMARG - Area level co
+    -   C19INTGR - This data set is a comprehensive set of all available COVID-19 diagnostic laboratory
+        results in Ontario, derived from 3 data sources: the **OLIS**; **CCM;** distributed testing data from laboratories within the COVID-19 Provincial Diagnostic Network.
+    -   COVaxON - Date, prodcut type, dosage,
+    -   CCM s45 - Information on COVID-19 cases such as symptoms, **epidemiological contacts and risk factors** are not complete in the OLIS data nor are captured in other health administrative databases. Thus, to enable more descriptive reporting on COVID-19 cases, ICES started receiving daily feeds of the Public Health Case and Contact Management (CCM) Solutions database, the centralized database containing all confirmed COVID-19 cases in Ontario, which was an entirely new data holding for ICES.
+
+    6.  What comorbidities will you be adjusting for?
+        1.  Asthma
+
+        2.  diabetes
+
+        3.  immunocompromising conditions due to underlying diseases or therapy
+
+        4.  autoimmune diseases
+
+        5.  active cancer
+
+        6.  pediatric complex chronic conditions·
+    7.  Why not use population controls?
+        1.  Written about this by Vandenbroucke and Pearce
+
+        2.  So they were saying because in a pure TND, we're comparing those who get sick from covid with those who get sick for some other reason, the factors that impact these outcomes may be very similar.
+
+        3.  So a way around this is by using population controls
+
+            1.  Vandenbroucke suggest using the accompanying person as a control--this might work for adults,
+
+                1.  These are people who would have accessed testing if they were ill but did not.
+
+                    1.  but not really for children and hard to collect in ICES data
+
+            2.  Other population controls possible
+
+                1.  But you really want to make sure that these people represent children who would have accessed testing if they were ill- so the underlying source population should be the same.
+
+                2.  \
+
+                    					
+                    				
+                    			
+                    		
+
+                    	
+
+                    | Col1      | Col2                                                     |
+                    |-----------|----------------------------------------------------------|
+                    | CCM       |                                                          |
+                    | DIN       | Drugs List                                               |
+                    | DAD/NACRS | The National Ambulatory Care Reporting System            
+                                 (NACRS) captures all visits to hospital EDs beginning in  
+                                 2002. As with the DAD, each row of the NACRS contains     
+                                 demographic, diagnostic, procedural and treatment         
+                                 information for each emergency room visit.35              |

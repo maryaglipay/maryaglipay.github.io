@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-12-09">
+<meta name="dcterms.date" content="2012-12-09">
 
-<title>Mary Aglipay - Consequences of exclusion criteria in my cohort data</title>
+<title>Mary Aglipay - Consequences of loss to follow-up</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -106,10 +125,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Consequences of exclusion criteria in my cohort data</h1>
+<h1 class="title">Consequences of loss to follow-up</h1>
   <div class="quarto-categories">
     <div class="quarto-category">study design</div>
-    <div class="quarto-category">bias</div>
   </div>
   </div>
 
@@ -121,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 9, 2022</p>
+      <p class="date">December 9, 2012</p>
     </div>
   </div>
   
@@ -131,16 +149,21 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>People who are be excluded from the cohort I am analyzing are children who had chronic diseases at the time of enrolment into the study as well as families that do no speak English.</p>
-<p>These chronic conditions included failure to thrive (1-10% of children in high income countries), cerebral palsy (1 to 4 per 1000), cystic fibrosis (1 in 3500), and congenital anomalies (3.5 to 14 in 10,000). Children with asthma and high-functioning autism were allowed to enrol in the study. One question that might be asked, is how will excluding children with chronic conditions impact your results? We had excluded these children because the original aims of the study were about healthy growth. If our target population does not include children with chronic conditions, and we don’t want to make inferences to this population, then we can simply say that doing so is beyond the scope of this study. And there are good reasons to limit it to children without chronic conditions–namely, that children with chronic conditions may have health behaviours and health outcomes (e.g.&nbsp;more severe infection) that are different than otherwise healthy children, and that these children represent a different population that probably deserves their own study.</p>
-<p>If you think of chronic conditions as a confounder, i.e.&nbsp;children with chronic conditions are more likely to adhere to NPIs, and they are more likely to have maybe more severe manifestations of Covid (i.e.&nbsp;less likely to be asymptomatic), then including children with chronic conditions and not adjusting for them will lead to bias. What this will do is bias the estimate toward the null, because if you can imagine, we will have more exposed infecteds.</p>
-<p>Another question I get often is how will the exclusion of non-English speaking families impact your results? Cohorts often have this exclusion criterion for two reasons. First, translation of questionnaires (unfortunately) is a very expensive endeavour. Another thing about longitudinal cohort studies is that the long-term relationships that they build with research assistants often keeps families in the study and is key to repeated follow-up. Unfortunately, having research assistants who are able to speak the multitude of languages that are spoken especially in a diverse place such as Toronto is challenging.</p>
-<p>So by excluding non-English speaking families, we can’t really generalize to this group. We also can’t make inferences to groups that don’t attend primary care, as our cohort is a primary care network. We know that more than 90% of children in Ontario attend primary care within the first few years of their life, which makes primary care an excellent source population for our study, but we still miss individuals. Also, I’m not convinced right now that there is a link between sociodemographic indicators, including non-English speaking, and NPI adherence. What we’re seeing is that we’re seeing highly affluent and educated individuals being non-adherent. And when we don’t have that link, confounding bias by non-English speaking may be negligible.</p>
-<p>However, another way to think of these exclusion criteria is through selection bias. Sometimes what happens is that our exclusion criteria means we are conditioning on common effects, or on variables that are descendants of both the exposure and the outcome. Fortunately, chronic illness and language speaking are likely common causes of both the exposure and the outcome (and unlikely to be caused by descendants of the exposure or outcome), and so selection bias is not an issue here.</p>
+<p>One problem cohort studies often face is loss to follow up. And often times the processes that give rise to participation in the cohort in the first place are also the processes that keep participants in the study. So, like we see in other cohort studies, our study tends to skew toward whiter, more educated, and more affluent families. And although I haven’t seen a lot of the data, I imagine that those who remain in the study tend to skew that way too. How does this impact my study?</p>
+<p><img src="images/paste-0F4B0004.png" class="img-fluid" width="280"></p>
+<p>Let’s look at this figure, which can be found in @hernán. If we imagine that U is having low income. Low income may mean less time to complete surveys, which means censoring. People with low income are also at high risk of Covid. There will be bias because we have conditioned on C, i.e.&nbsp;we are only looking at participants who remained in the study.</p>
+<p>The nice thing about time to event analyses is that participants who contribute data to the study but drop out are still considered in all of the analyses. But they are considered MAR, or missing at random, which means that the missingness is unrelated to any of the variables in the dataset.</p>
+<p>When we know that’s not true, we’ll have to look at other tools. In the book <span class="citation" data-cites="hernán">Hernán and Robins (<a href="#ref-hernán" role="doc-biblioref">n.d.</a>)</span>, he mentions using inverse probability of censoring weighting to account for selection bias. Essentially, you upweight participants who, based on their propensity to drop out, are more likely to drop out. Given the assumptions of exchangeability, this participant is used to represent participants like them that would have actually dropped out.</p>
+<p>In the parametric g-formula, there are also ways, which I am still learning about. But essentially what it involves is simulating outcomes beyond the time that they were actually censored. Basically, you simulate data as though they had not been censored.</p>
 
 
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-hernán" class="csl-entry" role="doc-biblioentry">
+Hernán, Miguel A, and James M Robins. n.d. <span>“Causal Inference: What If,”</span> 311.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
