@@ -277,9 +277,15 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Severe congenital abnormalities</p></li>
 <li><p>Prader-Willi syndrome</p></li>
 <li><p>Failure to Thrive</p></li>
-<li><p><br>
-</p></li>
 </ol></li>
+</ol></li>
+<li>There will be some measurement error around your time to event. We know that when people test they’ve already been infected for a couple days. how will you handle this?
+<ol type="1">
+<li><p>What we’re getting at is that we could have interval censored outcomes where we know that the true time to event is between two times– the last time they responded and when they reported having a positive test.</p></li>
+<li><p>And this is true—we probably can be sure that the infection happened closer to the censoring time than the last date of follow of no test, but there’s still interval censoring</p></li>
+<li><p>There’s a couple ways we can handle that. Cox likelihood models are generally fit better for right censored data. For interval censored data, we may have to specify a parametric model for the hazards function in order to use handle interval censored data. that’s something we can consider</p></li>
+<li><p>if we don’t want to specify the hazards function, we can simply think about doing a binary regression such as a logistic regression–where the outcome variable is coded zero if the subject survives the interval and 1 if the subject gets the event during the interval.<br>
+</p></li>
 </ol></li>
 </ol>
 <hr>
@@ -303,6 +309,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>How will changing RAT availability change your results? - What this means is that the degree of misclassification of the outcome will potentially over time.</li>
 </ol>
+<!-- -->
 <pre><code>-   Misclassification will depend on degree of availability of RATS, and the use of those rapid antigen tests.
 
 -   The direction and degree to which misclassification will impact results will depend on other covariates in the data (it is differential!)
@@ -365,6 +372,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>I think there are some efficiency things you might have to consider here–you might not find a suitable match for every vaccinated individual at every time point, even at large sample sizes.</p></li>
 <li><p>Can you walk us through some of the selection bias test-negative studies can present?</p></li>
 </ol>
+<!-- -->
 <pre><code>1.  Yes. The first has to do with external generalizability. We are only looking at children who test. They are very different from children who do not access testing, for a myriad of reasons, including income, resources, time, distance to clinic, etc.
 
 2.  
