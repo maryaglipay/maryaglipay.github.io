@@ -44,7 +44,7 @@ This is a fun blog where I basically I pick up my proposal and explain how I wou
 
     2.  First thing to do is look at the point estimate. Is it big? Then look at the precision around that estimate. Perhaps we simply did not have enough children testing with PCR to find enough results
 
-    3.   And then, if we think we've found a true, null result. This is really important information too. We'll have to compare to other studies in this age group to see if it's consistent. Work closely with a knowledge broker.
+    3.  And then, if we think we've found a true, null result. This is really important information too. We'll have to compare to other studies in this age group to see if it's consistent. Work closely with a knowledge broker.
 7.  
 
 ------------------------------------------------------------------------
@@ -122,7 +122,7 @@ Project 1
 
             -   Multiple imputation,
 
-            -    Examining the backdoor paths
+            -   Examining the backdoor paths
 14. What chronic conditions are excluded from your cohort?
     1.  TARGet Kids! is about Healthy growth
 
@@ -131,8 +131,14 @@ Project 1
         2.  Prader-Willi syndrome
 
         3.  Failure to Thrive
+15. There will be some measurement error around your time to event. We know that when people test they've already been infected for a couple days. how will you handle this?
+    1.  What we're getting at is that we could have interval censored outcomes where we know that the true time to event is between two times-- the last time they responded and when they reported having a positive test.
 
-        4.  \
+    2.  And this is true---we probably can be sure that the infection happened closer to the censoring time than the last date of follow of no test, but there's still interval censoring
+
+    3.  There's a couple ways we can handle that. Cox likelihood models are generally fit better for right censored data. For interval censored data, we may have to specify a parametric model for the hazards function in order to use handle interval censored data. that's something we can consider
+
+    4.  if we don't want to specify the hazards function, we can simply think about doing a binary regression such as a logistic regression--where the outcome variable is coded zero if the subject survives the interval and 1 if the subject gets the event during the interval.\
 
 ------------------------------------------------------------------------
 
@@ -152,14 +158,16 @@ Project 1
     -   This is a rule of thumb and we will have to play this by ear depending on how well the model converges, fit statistics, etc.
 3.  What kind of fit statistics?
     -   For our linear models, plots of residuals to ensure normality across each of covariates, and heteroscedasticity--plotting residuals across observations. ROC curves. Measures of sensitivity and specificity.
-4.   How will changing RAT availability change your results?
-    -   What this means is that the degree of misclassification of the outcome will potentially over time.
+4.  How will changing RAT availability change your results? - What this means is that the degree of misclassification of the outcome will potentially over time.
+
+<!-- -->
 
     -   Misclassification will depend on degree of availability of RATS, and the use of those rapid antigen tests.
 
     -   The direction and degree to which misclassification will impact results will depend on other covariates in the data (it is differential!)
 
     -   Luckily, we do have quarterly measures of serology, which means we have bias parameters that will change over time--so recognize that the degree to which this misclassification bias impacts our results is going to change over time. and that's key.
+
 5.  How do we account for contextual changes?
     1.  Contextual changes act as really important confounders
 
@@ -194,7 +202,7 @@ Project 1
 
     3.  Also, from my understanding parametric g-formula has the edge when it comes to positivity violations--so the idea that we might not be able to see each level of confounder in all levels of covariate strata.
 11. What are some other examples where the parametric g-formula has been applied?
-    1.   Mechanical ventilation in the ICU and mortality.
+    1.  Mechanical ventilation in the ICU and mortality.
 
     2.  air quality and mortality
 
@@ -214,7 +222,9 @@ Project 1
 
     3.  I think there are some efficiency things you might have to consider here--you might not find a suitable match for every vaccinated individual at every time point, even at large sample sizes.
 
-    4.   Can you walk us through some of the selection bias test-negative studies can present?
+    4.  Can you walk us through some of the selection bias test-negative studies can present?
+
+    <!-- -->
 
         1.  Yes. The first has to do with external generalizability. We are only looking at children who test. They are very different from children who do not access testing, for a myriad of reasons, including income, resources, time, distance to clinic, etc.
 
@@ -237,13 +247,12 @@ Project 1
     -   ASTHMA - Ontario Asthma Dataset.
     -   HIV - Ontario HIV Dataset. For immune disorder flag.
     -   OCCC - Ontario Crohn's and COlitis Cohort dataset. FOr immune disorder flag.
-    -   ODD  - Ontario Diabetes Dataset. For comorbidities
+    -   ODD - Ontario Diabetes Dataset. For comorbidities
     -   CENSUS - For area level ethnicity data
     -   RPDB - Registered Persons Database. For figuring out age, sex, alive/ dead.
     -   OLISC19 - OLIS Covid-19 Laboratory data
     -   ONMARG - Area level co
-    -   C19INTGR - This data set is a comprehensive set of all available COVID-19 diagnostic laboratory
-        results in Ontario, derived from 3 data sources: the **OLIS**; **CCM;** distributed testing data from laboratories within the COVID-19 Provincial Diagnostic Network.
+    -   C19INTGR - This data set is a comprehensive set of all available COVID-19 diagnostic laboratory results in Ontario, derived from 3 data sources: the **OLIS**; **CCM;** distributed testing data from laboratories within the COVID-19 Provincial Diagnostic Network.
     -   COVaxON - Date, prodcut type, dosage,
     -   CCM s45 - Information on COVID-19 cases such as symptoms, **epidemiological contacts and risk factors** are not complete in the OLIS data nor are captured in other health administrative databases. Thus, to enable more descriptive reporting on COVID-19 cases, ICES started receiving daily feeds of the Public Health Case and Contact Management (CCM) Solutions database, the centralized database containing all confirmed COVID-19 cases in Ontario, which was an entirely new data holding for ICES.
 
@@ -278,18 +287,12 @@ Project 1
 
                 2.  \
 
-                    					
-                    				
-                    			
-                    		
+                    | Col1      | Col2                                          |
+                    |-----------|-----------------------------------------------|
+                    | CCM       |                                               |
+                    | DIN       | Drugs List                                    |
+                    | DAD/NACRS | The National Ambulatory Care Reporting System |
 
-                    	
-
-                    | Col1      | Col2                                                     |
-                    |-----------|----------------------------------------------------------|
-                    | CCM       |                                                          |
-                    | DIN       | Drugs List                                               |
-                    | DAD/NACRS | The National Ambulatory Care Reporting System            
                                  (NACRS) captures all visits to hospital EDs beginning in  
                                  2002. As with the DAD, each row of the NACRS contains     
                                  demographic, diagnostic, procedural and treatment         

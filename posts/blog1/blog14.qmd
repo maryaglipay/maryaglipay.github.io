@@ -10,7 +10,3 @@ When we're thinking about controlled direct effects, the effect of an exposure o
 
 Instead what we need to do is standardize the estimates--find the predicted value of each of the scenarios (Exposure ON, mediator set to 1; Exposure OFF, mediator set to 1), and then average over them!  These will give us standardized estimate (e.g. risk) of the exposure-outcome relationship, without worrying about about the mediator in the model!
 
-
-
-
-

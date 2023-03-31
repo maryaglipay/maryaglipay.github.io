@@ -1,0 +1,16 @@
+---
+title: "Collider bias in risk factor epidemiology?"
+date: "2023-01-24"
+categories: [descriptive epidemiology, causal inference]
+---
+
+Welcome to my first blog of 2023! 
+
+This one has to do with risk factor epidemiology, and whether we can have 'collider bias' when we are exploring 'risk factors'.  
+
+Now, this question had me confused because risk factor epidemiology- e.g. what are the factors associated with outcome Y? -type question is inherently a descriptive question.  It's not saying that the risk factors are causes of the outcome Y, rather, these studies are suggesting that these factors/characteristics may act as 'warning signs' that the outcome Y may occur.  These are segments of the population, above and beyond other characteristics that may be adjusted for in a model, that have a higher risk of outcome Y.  That doesn't mean that being part of this population causes outcome Y.  There is a fine distinction here that is covered well in @Conroy.  However, the distinction doesn't get much love in the the lay media, nor even in a lot of general medical journals.  People tend to conflate 'risk factor' with 'cause', which are inherently different concepts. For example, carrying a lighter in your pocket is a risk factor for lung cancer.  That's because those who smoke are more likely to carry a lighter in their pocket and also more likely to have lung cancer.  But it would be a huge stretch to say that carrying a lighter in your pocket causes lung cancer. 
+
+But now that we have established that identifying risk factors is a descriptive problem, can collider bias even be an issue here?  After all, collider bias is in the context of causal epidemiology, where we bring out our DAGs and stuff.  We don't need DAGs for risk factor epidemiology, because we are not trying to find causes, we are trying to find associations.  These are different.  
+
+I think this is where it becomes a little tricky.  There are analogies trying to 
+
