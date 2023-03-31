@@ -41,7 +41,15 @@ Why do test-negative studies need to use the odds ratio? When we are selecting f
 
 A final note on target populations. In a test-negative study, because we are only including those who test, our target population really focuses on people who can test also. In other words, we can only make inference to participants who access testing. However, the test negative study is relatively robust because we have "taken care" of the health seeking behaviour (supposedly), we sacrifice generalizability for internal validity.
 
-In a cohort study, we are including everyone, so technically we are making inference to the larger population- people who test or who don't. The problem is, it's difficult to establish internal validity because of all the issues with misclassification and confounding due to health seeking behaviour. If we believe that we've taken care of the confounding, we're still left with misclassifiation, which technically biases our result toward the null. We need to be willing to assume that this is true. But we still have questionable internal validity- and if we don't have internal validity, then generalizability is not our biggest concern here.
+In a cohort study, we are including everyone, so technically we are making inference to the larger population- people who test or who don't. The problem is, it's difficult to establish internal validity because of all the issues with misclassification and confounding due to health seeking behaviour. If we believe that we've taken care of the confounding, we're still left with misclassification, which technically biases our result toward the null. We need to be willing to assume that this is true. But we still have questionable internal validity- and if we don't have internal validity, then generalizability is not our biggest concern here.
+
+**How do we think about factors associated with testing positive in the context of factors associated with testing in general?**
+
+Say we ran two models. A model looking at factors associated with testing in general. And then another model looking at factors associated with testing positive. We found that factors associated with testing were age, sex, and height. Then, we found that factors associated with testing positive were income and education. How do we make sense of this information?
+
+I guess it depends on if these models are independent--- ie. if the outcomes are independent of each other. If we think that testing positive and testing alone are unrelated to each other, then it is what it is- we found that age, sex and height were associated with testing. And income and education were associated with testing positive. Our target population is the same- everybody. This means there's a prediction model, applied to everyone, for who gets testing, and there's a separate prediction model, for everyone, for who tests positive.
+
+On the other hand, if our model is conditional on being tested, then we are thinking about two populations here. One where it's everyone, and we're looking at factors associated with testing. And another where it's just people who tested, and we're looking at factors associated with test positivity. This means that there's a prediction model for who gets in the group, and there's a prediction model of who tests positive once you're in the group.
 
 **Concluding remarks**
 
