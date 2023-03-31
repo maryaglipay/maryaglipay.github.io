@@ -12,5 +12,9 @@ Now, this question had me confused because risk factor epidemiology- e.g. what a
 
 But now that we have established that identifying risk factors is a descriptive problem, can collider bias even be an issue here?  After all, collider bias is in the context of causal epidemiology, where we bring out our DAGs and stuff.  We don't need DAGs for risk factor epidemiology, because we are not trying to find causes, we are trying to find associations.  These are different.  
 
-I think this is where it becomes a little tricky.  There are analogies trying to 
+But even without a causal framework, false associations can still be made when we condition on colliders.  Remember to establish causality there are a number of assumptions that need to be satisfied (exchangeability, positivity, consistency) in order to be able to call a plain old association a 'causal association'.  But associations that are not causal can still be induced by conditioning on a collider.
+
+Back to our example about lighters in pockets.  Say we are only looking at people in bars.  Note this is a collider- subjects with lighters in their pockets may be more likely to frequent bars, and subjects who have cancer may be less likely to frequent bars.   This means.  If you see a subject in a bar and they have a lighter, they probably don't have cancer.  And if you see a subject with cancer in a bar, they probably don't have a ligher.  Which makes it look like having a lighter is actually a protective predictor of cancer.  This is a non-causal association that has now been flipped because of conditioning on a collider! 
+
+
 
