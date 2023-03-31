@@ -37,13 +37,13 @@ In this case, those infected but did not seek care for their respiratory infecti
 
 Why do test-negative studies need to use the odds ratio? When we are selecting for inclusion into a test-negative study, similar to a case-control study, we are selecting based on the outcome. This means that we don't really have a 'proper' denominator for something like the relative risk- we manipulated (chose) the number of people who have the outcome, rather than randomly sampling from our target population. This means we don't really know the marginal distribution of the outcome (i.e. we don't know what the true prevalence of our outcome is in our target pop). Therefore, we need to use the odds ratio, which is invariant to the marginal distribution of the outcome!
 
-**Target populations**
+***Target populations***
 
 A final note on target populations. In a test-negative study, because we are only including those who test, our target population really focuses on people who can test also. In other words, we can only make inference to participants who access testing. However, the test negative study is relatively robust because we have "taken care" of the health seeking behaviour (supposedly), we sacrifice generalizability for internal validity.
 
 In a cohort study, we are including everyone, so technically we are making inference to the larger population- people who test or who don't. The problem is, it's difficult to establish internal validity because of all the issues with misclassification and confounding due to health seeking behaviour. If we believe that we've taken care of the confounding, we're still left with misclassification, which technically biases our result toward the null. We need to be willing to assume that this is true. But we still have questionable internal validity- and if we don't have internal validity, then generalizability is not our biggest concern here.
 
-**How do we think about factors associated with testing positive in the context of factors associated with testing in general?**
+***How do we think about factors associated with testing positive in the context of factors associated with testing in general?***
 
 Say we ran two models. A model looking at factors associated with testing in general. And then another model looking at factors associated with testing positive. We found that factors associated with testing were age, sex, and height. Then, we found that factors associated with testing positive were income and education. How do we make sense of this information?
 
